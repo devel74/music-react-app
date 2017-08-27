@@ -39,7 +39,7 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
-      path: '/albums',
+      path: '/albums/:artistName*',
       name: 'albums',
       getComponent(nextState, cb) {
         import('containers/AlbumsPage')

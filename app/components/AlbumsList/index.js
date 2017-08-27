@@ -7,14 +7,13 @@ import Wrapper from './Wrapper';
 
 const AlbumsList = (props) => (
   <Wrapper>
-      <Album image={defaultImage} name="Название альбома" />
-      <Album image={defaultImage} name="Название альбома" />
-      <Album image={defaultImage} name="Название альбома" />
-      <Album image={defaultImage} name="Название альбома" />
-      <Album image={defaultImage} name="Название альбома" />
-      <Album image={defaultImage} name="Название альбома" />
-      <Album image={defaultImage} name="Название альбома" />
-      <Album image={defaultImage} name="Название альбома" />
+    {props.albums.map((album, i) => (
+      <Album
+        key={i}
+        image={album.image[3]['#text'] || defaultImage}
+        name={album.name !== '(null)' ? album.name : 'Нет названия'}
+      />
+    ))}
   </Wrapper>
 );
 
