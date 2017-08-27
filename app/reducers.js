@@ -10,6 +10,7 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 import globalReducer from 'containers/App/reducer';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
 import searchProviderReducer from 'providers/SearchProvider/reducer';
+import libraryProviderReducer from 'providers/LibraryProvider/reducer';
 
 /*
  * routeReducer
@@ -48,6 +49,7 @@ export default function createReducer(asyncReducers) {
     global: globalReducer,
     language: languageProviderReducer,
     search: searchProviderReducer,
+    library: libraryProviderReducer,
     ...asyncReducers,
   });
 }

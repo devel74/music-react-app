@@ -9,6 +9,7 @@ import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
 
 import searchSaga from 'providers/SearchProvider/sagas';
+import librarySaga from 'providers/LibraryProvider/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -42,6 +43,7 @@ export default function configureStore(initialState = {}, history) {
 
   // Extensions
   sagaMiddleware.run(searchSaga);
+  sagaMiddleware.run(librarySaga);
   store.runSaga = sagaMiddleware.run;
   store.asyncReducers = {}; // Async reducer registry
 
