@@ -9,7 +9,6 @@
 import React, { PropTypes, Children } from 'react';
 
 import A from './A';
-import StyledButton from './StyledButton';
 import Wrapper from './Wrapper';
 
 function Button(props) {
@@ -23,9 +22,17 @@ function Button(props) {
   // If the Button has a handleRoute prop, we want to render a button
   if (props.handleRoute) {
     button = (
-      <StyledButton onClick={props.handleRoute}>
+      <button onClick={props.handleRoute}>
         {Children.toArray(props.children)}
-      </StyledButton>
+      </button>
+    );
+  }
+
+  if (props.isSubmit) {
+    button = (
+      <button type="submit" className="btn btn-default">
+        {Children.toArray(props.children)}
+      </button>
     );
   }
 
@@ -40,6 +47,7 @@ Button.propTypes = {
   handleRoute: PropTypes.func,
   href: PropTypes.string,
   onClick: PropTypes.func,
+  isSubmit: PropTypes.bool,
   children: PropTypes.node.isRequired,
 };
 

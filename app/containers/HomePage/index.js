@@ -7,6 +7,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+import SearchForm from 'components/SearchForm';
+
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
@@ -17,6 +19,7 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             { name: 'description', content: 'Home page description' },
           ]}
         />
+        <SearchForm />
         <h1>Home page</h1>
       </div>
     );
