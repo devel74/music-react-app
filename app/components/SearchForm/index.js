@@ -21,6 +21,8 @@ class SearchForm extends React.Component {
   }
   onSubmit(e) {
     e.preventDefault();
+    const name = this.searchForm.searchInput.value;
+    this.props.searchArtist(name || 'a');
   }
   render() {
     return (
@@ -46,6 +48,7 @@ class SearchForm extends React.Component {
 }
 
 SearchForm.propTypes = {
+  searchArtist: PropTypes.func,
 };
 
 export default SearchForm;

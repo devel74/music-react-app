@@ -3,16 +3,15 @@ import { Link } from 'react-router';
 
 const ArtistList = (props) => (
   <div>
+    {!props.artists &&
+    <p>Нет результатов</p>
+    }
     <ul className="list-group">
-      <li className="list-group-item">
-        <Link to="/">Tiesto</Link>
-      </li>
-      <li className="list-group-item">
-        <Link to="/">Skrillex</Link>
-      </li>
-      <li className="list-group-item">
-        <Link to="/">Armen Van Buuren</Link>
-      </li>
+      {props.artists.map((artist, i) => (
+        <li key={i} className="list-group-item">
+          <Link to={`/albums/${artist.name}`}>{artist.name}</Link>
+        </li>
+      ))}
     </ul>
   </div>
 );
