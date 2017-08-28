@@ -25,8 +25,10 @@ export function* getSearchArtistRequest(action) {
   };
   try {
     // Call our request helper (see 'utils/request')
+    action.setIsLoading(true);
     const res = yield call(request, setDataUrl(API_SERVER, params));
     yield put(searchArtistReceive(res));
+    action.setIsLoading(false);
   } catch (err) {
     console.log('error app saga', err); // eslint-disable-line
   }

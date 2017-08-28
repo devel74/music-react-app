@@ -3,10 +3,11 @@ import {
   SEARCH_ARTIST_RECEIVE,
 } from './constants';
 
-export function searchArtistRequest(artistName) {
+export function searchArtistRequest(artistName, setIsLoading) {
   return {
     type: SEARCH_ARTIST_REQUEST,
     artistName,
+    setIsLoading,
   };
 }
 

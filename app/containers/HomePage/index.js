@@ -45,7 +45,7 @@ const mapStateToProps = createSelector(
 
 export function mapDispatchToProps(dispatch) {
   return {
-    searchArtist: (name) => dispatch(searchArtistRequest(name)),
+    searchArtist: (name, setIsLoading) => dispatch(searchArtistRequest(name, setIsLoading)),
     dispatch,
   };
 }
