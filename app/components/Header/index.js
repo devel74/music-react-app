@@ -8,7 +8,7 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
   render() {
     return (
       <Wrapper>
-        <h1><Link to="/">Last FM</Link></h1>
+        <h1><Link to="/">Last FM 2</Link></h1>
       </Wrapper>
     );
   }
